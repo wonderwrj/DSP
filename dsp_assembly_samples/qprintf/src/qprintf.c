@@ -11,11 +11,11 @@ All Rights Reserved Qualcomm Proprietary
 =============================================================================**/
 
 #include "qprintf.h"
+#include <stdio.h>
 
 #ifndef FARF_HIGH
 #define FARF_HIGH 1
 #endif
-#include "HAP_farf.h"
 #include "string.h"
 
 unsigned long long qd_print_mask[2] = {-1ull,-1ull};

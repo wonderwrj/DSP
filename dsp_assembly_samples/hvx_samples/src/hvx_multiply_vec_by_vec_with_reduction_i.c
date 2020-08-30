@@ -21,7 +21,7 @@
 *-------------------------------------------------------------*/
 void
 hvx_Q6_Vw_vrmpyacc_VwVbVb() {
-    print_wrapper_start("multply with reduction");
+    print_wrapper_start("multply vectors with reduction");
 
     HVX_Vector Vu;
     HVX_Vector Vv ;
@@ -30,20 +30,19 @@ hvx_Q6_Vw_vrmpyacc_VwVbVb() {
     uint32_t splat_val = 0x04040404;
     printf("Splatting hvx vector with a word:a = %lx", splat_val);
     Vu = Q6_V_vsplat_R(splat_val);
-    qprintf_V("%x\n", Vu);
+    print_hvx_as_ui8_all(Vu, "V_vsplat_R on Vu", __FILE__, __LINE__, 1);
 
     splat_val = 0x01010101;
     printf("Splatting hvx vector with a word:a = %lx", splat_val);
     Vv = Q6_V_vsplat_R(splat_val);
-    qprintf_V("%x\n", Vv);
+    print_hvx_as_ui8_all(Vv, "V_vsplat_R on Vv", __FILE__, __LINE__, 1);
 
     splat_val = 0x00000010;
     printf("Splatting hvx vector with a word:a = %lx", splat_val);
     Vx = Q6_V_vsplat_R(splat_val);
-    qprintf_V("%x\n", Vx);
+    print_hvx_as_ui8_all(Vx, "V_vsplat_R on Vx", __FILE__, __LINE__, 1);
 
     Vx = Q6_Vw_vrmpyacc_VwVbVb(Vx, Vu, Vv);
-    printf("After multiply and accumulate: Vx =");
-    qprintf_V("%x\n", Vx);
+    print_hvx_as_ui8_all(Vx, "Q6_Vw_vrmpyacc_VwVbVb on Vx", __FILE__, __LINE__, 1);
 }
 /*-------------------------------------------------------------*/

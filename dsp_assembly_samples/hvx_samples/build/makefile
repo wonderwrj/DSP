@@ -15,13 +15,21 @@ all: clean hvx_samples sim
 
 C_SRCS = ../test/hvx_samples.c \
 		../src/hvx_samples_utility.c \
+		../src/debug.c \
 		 ../src/hvx_splat_i.c \
 		 ../src/hvx_vzero_i.c \
 		 ../src/hvx_q_vset_i.c \
 		 ../src/hvx_vmux_i.c \
 		../src/hvx_multiply_with_reduction_i.c \
 		../src/hvx_multiply_vec_by_vec_with_reduction_i.c \
-		../src/hvx_vmemu_i.c
+		../src/hvx_vmemu_i.c \
+		../src/hvx_bitwise_ops_i.c \
+		../src/hvx_pack_ops_i.c \
+		../src/hvx_int_multiply_i.c \
+		../src/hvx_shuffle_i.c \
+		../src/hvx_align_i.c \
+		../src/hvx_shift_i.c 
+
 
 C_OBJS = $(C_SRCS:%.c=%.o)
 
